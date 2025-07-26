@@ -1034,7 +1034,7 @@ queue_on_teleport([==[
         workspace.__REMOTES.Game.Trading:InvokeServer("Ready", lastTradeId)
         
         repeat task.wait(0.1) until PLR_PET_COUNT < #workspace.__REMOTES.Core["Get Other Stats"]:InvokeServer()[PLR.Name].Save.Pets
-        if isme then wait(5) end
+        if isme and game.Players:FindFirstChild'sowhatsatimberland' then wait(10) end
         queue_on_teleport([[
 	    repeat task.wait() until game:IsLoaded()
             local h = Instance.new('Hint',workspace)
