@@ -18,6 +18,7 @@ local SETTINGS = {
 	DELETE_UI_UPDATER	= false,
 	TIER				= "Tier 1",
 	TOTAL_EGGS_TO_OPEN	= 'inf',
+	
 	AUTO_COMBINE		= {
 		ENABLED	= false,
 		CONFIGS	= {
