@@ -253,7 +253,7 @@ repeat task.wait()
 	
 	workspace.__REMOTES.Game.Inventory:InvokeServer("MultiDelete", DELETE_PETS_TABLE)
 	
-	if SETTINGS.COMBINE then
+	if SETTINGS.AUTO_COMBINE.ENABLED then
 		task.spawn(COMBINE)
 	end
 	
